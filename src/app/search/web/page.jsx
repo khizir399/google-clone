@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import WebSearchResults from "@/component/WebSearchResults";
 import { resolve } from "styled-jsx/css";
@@ -25,5 +25,9 @@ export default async function WebSearchPage({ searchParams }) {
       </div>
     );
   }
-  return <div>{results && <WebSearchResults results={data} />}</div>;
+  return (
+    <div>
+      <Suspense>{results && <WebSearchResults results={data} />}</Suspense>
+    </div>
+  );
 }
