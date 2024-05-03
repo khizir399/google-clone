@@ -5,7 +5,6 @@ import PaginationButtons from "@/component/PaginationButtons";
 
 export default async function ImageSearchPage({ searchParams }) {
   const startIndex = searchParams.start || "1";
-  await new Promise((resolve) => setTimeout(resolve, 10000));
   const response = await fetch(
     `https://www.googleapis.com/customsearch/v1?key=AIzaSyDEgKXGFV7hLLzyg4d4Xc38ZwOBkKbZbks&cx=46fb283236bad4a67&q=${searchParams.searchTerm}&searchType=image&start=${startIndex}`
   );
